@@ -1,0 +1,55 @@
+# Construye la web con el generador y la publica en GitHub Pages
+# cada vez que se guarda un cambio en la carpeta generador/.
+name: Construir y publicar la web
+
+on:
+  push:
+    branches: [main]
+    paths: ['generador/**', '.github/workflows/**']
+  workflow_dispatch:        # botón «Run workflow» para publicar a mano
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: pip install pillow
+
+      - name: Construir la web
+        env:
+          SALIDA: ${{ github.workspace }}/_salida
+        run: python generador/build.py
+
+      - name: Comprobar los proyectos de Scratch
+        run: |
+          python generador/comprobar.py _salida/web/sb3
+          python generador/comprobar.py _salida/web/recursos/plantillas
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _salida/web
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

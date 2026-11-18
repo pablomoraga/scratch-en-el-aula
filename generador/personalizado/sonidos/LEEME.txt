@@ -1,0 +1,1 @@
+Sube aquí sonidos WAV con el nombre del sonido que quieres sustituir (ver GUIA-EDICION.md).
