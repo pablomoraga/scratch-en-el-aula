@@ -311,7 +311,7 @@ def build():
             '<p class="lead">Un manual propio y sintético para aprender a programar con Scratch 3.0: del primer bloque a juegos, música, '
             'Makey Makey, micro:bit y realidad aumentada.</p><p><a class="btn" href="empezar/index.html">Empezar ↓</a> '
             '<a class="btn btn2" href="comenzamos/index.html">Ir a los retos</a></p>'
-            '<div class="stats"><span><b>%d</b> retos</span><span><b>3</b> talleres</span><span><b>%d</b> archivos .sb3</span></div></div>'
+            '<div class="stats"><span><b>%d</b> retos</span><span><b>11</b> talleres</span><span><b>%d</b> archivos .sb3</span></div></div>'
             '<img class="hero-robit" src="img/robit.svg" alt="Robit, la mascota del proyecto, saludando" width="192" height="240"></section>'
             '<section class="home-sec"><h2><span class="num">00</span> Contenidos</h2><div class="cards">%s</div></section>'
             '<section class="home-sec"><h2><span class="num">→</span> Para el profesorado</h2>%s</section>') % (
