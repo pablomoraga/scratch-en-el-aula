@@ -86,8 +86,8 @@ CAT = {'motion': '#4C97FF', 'looks': '#9966FF', 'sound': '#CF63CF', 'events': '#
 HEX = 'clip-path:polygon(9px 0,calc(100% - 9px) 0,100% 50%,calc(100% - 9px) 100%,9px 100%,0 50%);'
 STY = {
     'sb-wrap': 'margin:12px 0;',
-    'sb-group': 'border:1px dashed #b9ad97;border-radius:8px;padding:8px 10px 4px;margin:8px 0;background:#fffdf8;',
-    'sb-owner': 'font:700 11px/1.4 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em;text-transform:uppercase;color:#7a6f5c;margin-bottom:4px;',
+    'sb-group': 'border:1px dashed #adb3bc;border-radius:8px;padding:8px 10px 4px;margin:8px 0;background:#fdfdfe;',
+    'sb-owner': 'font:700 11px/1.4 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em;text-transform:uppercase;color:#6b717a;margin-bottom:4px;',
     'sb-scripts': 'display:flex;flex-wrap:wrap;align-items:flex-start;gap:4px 18px;',
     'sb-script': 'display:inline-flex;flex-direction:column;align-items:flex-start;margin:4px 0 8px;font:700 13px/1.25 Helvetica,Arial,sans-serif;color:#fff;',
     'sb-solo': 'margin:2px 0;',
@@ -97,7 +97,7 @@ STY = {
     'sb-def': 'border-radius:18px 18px 5px 5px;',
     'sb-c': 'display:flex;flex-direction:column;align-items:stretch;border-radius:5px;margin:0 0 1px;border:1px solid rgba(0,0,0,.18);color:#fff;',
     'sb-line': 'display:flex;flex-wrap:wrap;align-items:center;gap:5px;padding:6px 10px;',
-    'sb-in': 'display:flex;flex-direction:column;align-items:flex-start;margin-left:14px;min-height:14px;padding:1px 0;background:#fffdf8;',
+    'sb-in': 'display:flex;flex-direction:column;align-items:flex-start;margin-left:14px;min-height:14px;padding:1px 0;background:#fdfdfe;',
     'sb-cend': 'height:10px;',
     'sb-num': 'display:inline-block;background:#fff;color:#575e75;border-radius:10px;padding:2px 8px;font-weight:500;',
     'sb-txt': 'display:inline-block;background:#fff;color:#575e75;border-radius:3px;padding:2px 6px;font-weight:500;',
@@ -118,24 +118,24 @@ STY = {
     'tabla': 'border-collapse:collapse;width:100%;margin:12px 0;font-size:.95em;',
     'tabla-bloques': 'border-collapse:collapse;width:100%;margin:12px 0;font-size:.95em;',
     'ficha': 'display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;',
-    'chip': 'display:inline-block;font:600 12px/1 ui-monospace,Menlo,Consolas,monospace;padding:6px 9px;border:1.5px solid #1f1b16;border-radius:20px;background:#fff;',
-    'chip-c': 'border-color:#b9ad97;background:#f3ecdf;',
-    'objetivo': 'font-size:1.05em;background:#fff;border:1.5px solid #1f1b16;border-radius:8px;padding:10px 14px;box-shadow:3px 3px 0 #1f1b16;',
-    'ayuda': 'border:1.5px solid #1f1b16;border-radius:8px;padding:8px 12px;margin:12px 0;background:#fff;',
-    'btn-dl': 'display:inline-block;background:#e85d2a;color:#fff;font-weight:700;text-decoration:none;padding:8px 14px;border-radius:6px;border:1.5px solid #1f1b16;box-shadow:2px 2px 0 #1f1b16;',
-    'dl-hint': 'font-size:.85em;color:#6a604f;margin-left:6px;',
+    'chip': 'display:inline-block;font:600 12px/1 ui-monospace,Menlo,Consolas,monospace;padding:6px 9px;border:1.5px solid #1c1e22;border-radius:20px;background:#fff;',
+    'chip-c': 'border-color:#adb3bc;background:#eceef1;',
+    'objetivo': 'font-size:1.05em;background:#fff;border:1.5px solid #1c1e22;border-radius:8px;padding:10px 14px;box-shadow:3px 3px 0 #1c1e22;',
+    'ayuda': 'border:1.5px solid #1c1e22;border-radius:8px;padding:8px 12px;margin:12px 0;background:#fff;',
+    'btn-dl': 'display:inline-block;background:#e85d2a;color:#fff;font-weight:700;text-decoration:none;padding:8px 14px;border-radius:6px;border:1.5px solid #1c1e22;box-shadow:2px 2px 0 #1c1e22;',
+    'dl-hint': 'font-size:.85em;color:#5c626b;margin-left:6px;',
     'dl': 'margin:10px 0;',
-    'ejemplo': 'border-top:1px solid #d9cfbd;padding-top:6px;margin-top:18px;',
-    'comparar': 'display:flex;flex-wrap:wrap;gap:20px;', 'comparar-t': 'font:700 12px/1 ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.06em;color:#7a6f5c;margin:10px 0 4px;',
+    'ejemplo': 'border-top:1px solid #d3d7de;padding-top:6px;margin-top:18px;',
+    'comparar': 'display:flex;flex-wrap:wrap;gap:20px;', 'comparar-t': 'font:700 12px/1 ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase;letter-spacing:.06em;color:#6b717a;margin:10px 0 4px;',
     'recursos': 'display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;',
-    'recurso': 'display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;background:#fff;border:1.5px solid #1f1b16;border-radius:10px;padding:10px;min-width:120px;',
-    'codigo': 'background:#1f1b16;color:#f3ecdf;padding:12px 14px;border-radius:8px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;overflow:auto;',
+    'recurso': 'display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;background:#fff;border:1.5px solid #1c1e22;border-radius:10px;padding:10px;min-width:120px;',
+    'codigo': 'background:#1c1e22;color:#eceef1;padding:12px 14px;border-radius:8px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;overflow:auto;',
 }
 for c, col in CAT.items():
     STY['c-' + c] = 'background:%s;' % col
 
 ENT = '''.entorno{display:grid;grid-template-columns:70px 150px 1fr 240px;grid-template-rows:34px 30px 34px 150px 90px 40px;gap:4px;font:600 12px/1.25 system-ui,sans-serif;margin:14px 0;max-width:760px}
-.entorno .z{border:1.5px solid #1f1b16;border-radius:6px;padding:6px;background:#fff}
+.entorno .z{border:1.5px solid #1c1e22;border-radius:6px;padding:6px;background:#fff}
 .entorno b{display:inline-block;background:#e85d2a;color:#fff;border-radius:50%;width:18px;height:18px;text-align:center;line-height:18px;margin-right:4px}
 .z-menu{grid-column:1/5;background:#855cd6!important;color:#fff}.z-tabs{grid-column:1/4}.z-stagebar{grid-column:4}
 .z-cat{grid-row:3/7;grid-column:1}.z-pal{grid-row:3/7;grid-column:2;background:#f9f9f9!important}.z-code{grid-row:3/7;grid-column:3;background:#f9f9f9!important}
@@ -151,8 +151,8 @@ def inline(htmltxt):
     from sb import FLAG
     htmltxt = htmltxt.replace(FLAG, '<span style="color:#3f9e47;font-weight:900;">⚑</span>')
     out = re.sub(r'class="([^"]*)"', rep, htmltxt)
-    out = out.replace('<td>', '<td style="border:1px solid #d9cfbd;padding:6px 8px;vertical-align:top;">')
-    out = out.replace('<th>', '<th style="border:1px solid #d9cfbd;padding:6px 8px;background:#f3ecdf;text-align:left;">')
+    out = out.replace('<td>', '<td style="border:1px solid #d3d7de;padding:6px 8px;vertical-align:top;">')
+    out = out.replace('<th>', '<th style="border:1px solid #d3d7de;padding:6px 8px;background:#eceef1;text-align:left;">')
     out = out.replace('<summary>', '<summary style="cursor:pointer;font-weight:700;">')
     return out
 

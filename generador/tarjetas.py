@@ -36,7 +36,7 @@ def card_back(r, blocks_html):
 
 CSS = '''@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;font:12.5pt/1.4 "DejaVu Sans",sans-serif;color:#1b1b2f}
 .sheet{width:210mm;height:297mm;page-break-after:always;display:flex;flex-direction:column}
-.card{width:210mm;height:148.5mm;padding:9mm 11mm;border-bottom:1px dashed #b9ad97;position:relative;overflow:hidden;background:#fffdf8}
+.card{width:210mm;height:148.5mm;padding:9mm 11mm;border-bottom:1px dashed #adb3bc;position:relative;overflow:hidden;background:#fdfdfe}
 .band{display:flex;align-items:center;gap:5mm;background:#1b1b2f;color:#fff;margin:-9mm -11mm 5mm;padding:4mm 11mm}
 .robit svg{width:15mm;height:auto;display:block}
 .num{font:700 15pt "DejaVu Sans Mono",monospace;letter-spacing:.06em;color:#ffbe2e}.num.small{font-size:10pt;color:#e0861a;margin-bottom:2mm}
