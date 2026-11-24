@@ -11,6 +11,7 @@ for f in sorted(glob.glob(sys.argv[1]+'/*.sb3')):
             if c['md5ext'] not in names: errs.append('asset missing '+c['md5ext'])
         cos={c['name'] for c in t['costumes']}; snd={s['name'] for s in t['sounds']}
         B=t['blocks']
+        tapados={v[2] for b in B.values() for v in b['inputs'].values() if v[0]==3 and len(v)>2 and isinstance(v[2],str)}  # menús tapados por un reportero
         for bid,b in B.items():
             if b['parent'] and b['parent'] not in B: errs.append('parent '+bid)
             if b['next'] and (b['next'] not in B or B[b['next']]['parent']!=bid): errs.append('next '+bid)
@@ -27,7 +28,7 @@ for f in sorted(glob.glob(sys.argv[1]+'/*.sb3')):
                 if k=='LIST' and v[1] not in listids: errs.append('listfield')
                 if k=='BROADCAST_OPTION' and v[1] not in bids: errs.append('bcfield')
             op=b['opcode']; fv=list(b['fields'].values())[0][0] if b['fields'] else None
-            if op=='looks_costume' and fv not in cos: errs.append('costume '+fv)
+            if op=='looks_costume' and bid not in tapados and fv not in cos: errs.append('costume '+fv)
             if op in('looks_backdrops',) and fv not in backdrops: errs.append('backdrop '+fv)
             if op=='event_whenbackdropswitchesto' and fv not in backdrops: errs.append('bd hat '+fv)
             if op=='sound_sounds_menu' and fv not in snd: errs.append('sound %s in %s'%(fv,t['name']))

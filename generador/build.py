@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import os, re, shutil, json, html, zipfile, sys
+import os, glob, re, shutil, json, html, zipfile, sys
 sys.path.insert(0, os.path.dirname(__file__))
 import common
 from common import PAGES, PROJECTS, e, P, ul, box
@@ -39,7 +39,7 @@ SEC_INTRO = {
     'saber': P('Recursos para trabajar en clase y para seguir aprendiendo: los materiales de los retos de Comenzamos listos para repartir, '
                'un glosario, una rúbrica de evaluación y enlaces recomendados.'),
     'talleres': P('Talleres cerrados de una hora, con guion por tiempos, fases y proyecto terminado. Los tres primeros están pensados para un club de robótica, '
-                  'una jornada de puertas abiertas o una clase magistral en un museo de ciencia. En <b>Efemérides</b> tienes ocho más para celebrar fechas especiales del curso.'),
+                  'una jornada de puertas abiertas o una clase magistral en un museo de ciencia. En <b>Efemérides</b> tienes nueve más para celebrar fechas especiales del curso.'),
 }
 GROUP_INFO = {g[1]: g for g in GROUPS}
 
@@ -203,7 +203,7 @@ def group_body(g, for_exe=False):
         body += P(info[2])
         if info[3]: body += box('ojo', 'Antes de empezar necesitas', ul(info[3]))
     elif g['title'] == 'Efemérides':
-        body += P('Ocho talleres de una hora para celebrar fechas del curso con un proyecto de Scratch vistoso: Halloween, Navidad, Día de la Paz, '
+        body += P('Nueve talleres para celebrar fechas del curso con un proyecto de Scratch vistoso: Halloween, Día de la Constitución (concurso con Makey Makey y cuaderno), Navidad, Día de la Paz, '
                   'Carnaval, Día de Andalucía, Día del Libro, Día del Medio Ambiente y fin de curso. Cada uno trae guion por tiempos, fases, '
                   'proyecto terminado y adaptaciones para Primaria y ESO.')
     else:
@@ -311,11 +311,11 @@ def build():
             '<p class="lead">Un manual propio y sintético para aprender a programar con Scratch 3.0: del primer bloque a juegos, música, '
             'Makey Makey, micro:bit y realidad aumentada.</p><p><a class="btn" href="empezar/index.html">Empezar ↓</a> '
             '<a class="btn btn2" href="comenzamos/index.html">Ir a los retos</a></p>'
-            '<div class="stats"><span><b>%d</b> retos</span><span><b>11</b> talleres</span><span><b>%d</b> archivos .sb3</span></div></div>'
+            '<div class="stats"><span><b>%d</b> retos</span><span><b>12</b> talleres</span><span><b>%d</b> archivos .sb3</span></div></div>'
             '<img class="hero-robit" src="img/robit.svg" alt="Robit, la mascota del proyecto, saludando" width="192" height="240"></section>'
             '<section class="home-sec"><h2><span class="num">00</span> Contenidos</h2><div class="cards">%s</div></section>'
             '<section class="home-sec"><h2><span class="num">→</span> Para el profesorado</h2>%s</section>') % (
-        nret, len(PROJECTS), cards,
+        nret, len(PROJECTS) + len(glob.glob(os.path.join(HERE, 'estaticos', 'sb3', '*.sb3'))), cards,
         P('Todos los retos incluyen pistas y un archivo <b>.sb3</b> de ayuda que se abre en Scratch con <b>Archivo › Cargar desde tu ordenador</b>. '
           'Robit y el resto de personajes, fondos y sonidos son originales: se pueden usar libremente en clase y cambiar por los del alumnado.'))
     open(SITE + '/index.html', 'w', encoding='utf-8').write(doc('Inicio', home, '', None))

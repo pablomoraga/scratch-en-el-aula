@@ -35,8 +35,54 @@ T(1, 'efemeride-halloween', 'Halloween · Caza fantasmas en la casa encantada', 
   ['Primaria baja: sin clones; un solo fantasma que salta a otro sitio al atraparlo.',
    'ESO: fantasmas que se mueven más rápido según pasa el tiempo y una calabaza «trampa» que resta puntos.'])
 
+# =========================================================== Día de la Constitución
+# Proyecto propio hecho aparte (no lo genera este programa): generador/estaticos/sb3/efemeride-constitucion.sb3
+# Cuaderno del alumnado: generador/estaticos/recursos/cuaderno-concurso-constitucion.pdf
+from c_talleres import guion, SEC
+def _constitucion():
+    slug = 'efemeride-constitucion'
+    pdf = ('<a class="btn-dl" href="{{RES}}cuaderno-concurso-constitucion.pdf" download>⬇ Cuaderno del concurso (PDF, 11 páginas)</a>')
+    body = ('<div class="ficha"><span class="chip">Efeméride 2</span><span class="chip">⏱ 35-40 min de juego</span>'
+            '<span class="chip">6 de diciembre · 3º y 4º de Primaria</span><span class="chip">Makey Makey</span></div>'
+            '<p class="objetivo">«El Gran Concurso de la Constitución»: 32 preguntas en 3 rondas que la clase responde por equipos '
+            'tocando 4 contactos de Makey Makey. Le acompaña un cuaderno para preparar el concurso en los días anteriores.</p>' +
+            jugar(slug) +
+            '<p class="dl"><a class="btn-dl" href="{{SB3}}%s.sb3" download>⬇ Juego del concurso (.sb3)</a> %s</p>' % (slug, pdf) +
+            box('ojo', 'Material', ul([
+                'Ordenador con Scratch 3.0 (en línea o la aplicación) conectado a la pizarra digital o al proyector.',
+                'Una placa Makey Makey con 4 contactos: flecha arriba (A, azul), derecha (B, rojo), abajo (C, amarillo) e izquierda (D, verde). '
+                'Sirven papel de aluminio, plastilina o fruta. Sin Makey Makey se juega igual con las flechas del teclado.',
+                'El cuaderno impreso, uno por alumno o por equipo.'])) +
+            '<h3>Cómo se juega</h3>' + ul([
+                '<b>Portada</b>: se pulsa cualquier botón para empezar.',
+                '<b>3 rondas</b>: Historia y símbolos de España (preguntas 1-11), Derechos, deberes y convivencia (12-22) y Democracia y organización de España (23-32). '
+                'Antes de cada ronda el juego espera a que se pulse un botón, para presentar el tema con calma.',
+                '<b>Cada pregunta</b>: 4 paneles de colores. Al responder suena acierto o error, se marca la opción correcta y aparece una tarjeta '
+                '«¿Sabías que…?» con la explicación.',
+                '<b>Puntos</b>: 10 por acierto y 5 de premio a partir del tercer acierto seguido (máximo 470).',
+                '<b>Diploma final</b>: oro (350 o más), plata (220-349), bronce (120-219) o aprendiz constitucional.']) +
+            '<h3>Guion de la actividad</h3>' + guion([
+                ('Días antes', 'Trabajo con el cuaderno: qué es la Constitución, las tres rondas con sus actividades, repaso final y carnet de ciudadanía para recortar.'),
+                ('0-5', 'Formar equipos, repasar los colores de los botones y probar el Makey Makey.'),
+                ('5-40', 'Concurso: unos 30 segundos de lectura y debate por pregunta. Comentar en voz alta cada «¿Sabías que…?».'),
+                ('40-45', 'Diploma, puntuación y compromiso de convivencia del cuaderno.')]) +
+            '<h3>Qué hay dentro del proyecto</h3>' + ul([
+                '<b>Escenario</b> con el programa principal, la puntuación, los sonidos y 11 fondos (portada, rondas, juego y diplomas).',
+                '<b>Objetos</b>: Pregunta (32 disfraces), MarcoCorrecto y MarcoError, Explicación (32 disfraces) y Consti, el pergamino presentador.',
+                '<b>Listas</b> con los enunciados, las 4 opciones, la letra correcta y la explicación de cada pregunta: cambiando las listas y los disfraces '
+                'se puede hacer un concurso de cualquier otro tema.',
+                '<b>Antirrebote</b>: la variable <i>AceptaRespuesta</i> solo admite una pulsación por pregunta y no vuelve a abrirse hasta que nadie toca ningún contacto.']) +
+            box('docente', 'Para el docente', P('La última página del cuaderno trae el solucionario. Las respuestas correctas están repartidas por igual '
+                                                 'entre A, B, C y D, así que ningún botón es «el de la suerte».')) +
+            box('reto', 'Adaptaciones', ul([
+                '<b>Más pequeños</b>: jugar solo la ronda 1 y leer en voz alta las preguntas.',
+                '<b>ESO</b>: que cada equipo cree su propia ronda con 5 preguntas nuevas añadiéndolas a las listas.',
+                '<b>Sin Makey Makey</b>: usar las flechas del teclado o 4 alumnos «pulsadores».'])))
+    page(SEC, slug, 'Día de la Constitución · El Gran Concurso', body, kind='taller', group=G, meta=dict(num=2))
+_constitucion()
+
 # =========================================================== Navidad
-T(2, 'efemeride-navidad', 'Navidad · Lluvia de regalos', 'Diciembre · desde 8 años',
+T(3, 'efemeride-navidad', 'Navidad · Lluvia de regalos', 'Diciembre · desde 8 años',
   'Nieva sobre un pueblo de montaña, el árbol se ilumina y caen regalos que hay que recoger con el saco. Cada regalo atrapado toca una nota más aguda.',
   PC + ['Altavoces o auriculares (usa la extensión Música).'],
   [('0-10', 'Demostración. ¿Qué cosas se repiten en el proyecto? (la nieve, las luces, los regalos).'),
@@ -66,7 +112,7 @@ T(2, 'efemeride-navidad', 'Navidad · Lluvia de regalos', 'Diciembre · desde 8 
    'ESO: regalos de distinto valor (lista de puntos) y una melodía completa guardada en una lista.'])
 
 # =========================================================== Día de la Paz
-T(3, 'efemeride-paz', 'Día de la Paz · Palabras de paz por el mundo', '30 de enero · desde 9 años',
+T(4, 'efemeride-paz', 'Día de la Paz · Palabras de paz por el mundo', '30 de enero · desde 9 años',
   'Robit dice la palabra «paz» en varios idiomas, en voz alta y por escrito, mientras las palomas cruzan el cielo. Cada paloma a la que haces clic deja un mensaje.',
   PC + ['Conexión a internet (extensiones Traducir y Texto a voz).', 'Altavoces.'],
   [('0-10', 'Conversación: ¿cómo se dice «paz» en las lenguas que conocemos en clase?'),
@@ -96,7 +142,7 @@ def accesorio(nombre, cos, home, puesto, talla):
     return Sprite(nombre, [cos], [[flag(), gotoxy(hx, hy), setsize(80), front()],
                                   [clicked(), ifelse(lt(ypos(), -100), [setsize(talla), glide(0.4, px_, py_), front(), play('pop')],
                                                      [setsize(80), glide(0.4, hx, hy)])]], x=hx, y=hy, size=80, sounds=['pop'])
-T(4, 'efemeride-carnaval', 'Carnaval · Disfraza a Robit', 'Febrero · desde 6 años',
+T(5, 'efemeride-carnaval', 'Carnaval · Disfraza a Robit', 'Febrero · desde 6 años',
   'Un probador de disfraces: haces clic en un gorro, unas gafas o un antifaz y se colocan sobre Robit. Con teclas cambia de color y baila.',
   PC,
   [('0-10', 'Demostración y lluvia de ideas de disfraces.'),
@@ -122,7 +168,7 @@ PROV = ['Almería', 'Cádiz', 'Córdoba', 'Granada', 'Huelva', 'Jaén', 'Málaga
 SIN = ['Almeria', 'Cadiz', 'Cordoba', 'Granada', 'Huelva', 'Jaen', 'Malaga', 'Sevilla']
 def franja(color, y0):
     return [pcolor(color), setv('y', y0), rep(4, gotoxy(-150, v('y')), pdown(), setx(150), pup(), chv('y', -10))]
-T(5, 'efemeride-andalucia', 'Día de Andalucía · Bandera y provincias', '28 de febrero · desde 8 años',
+T(6, 'efemeride-andalucia', 'Día de Andalucía · Bandera y provincias', '28 de febrero · desde 8 años',
   'El lápiz dibuja la bandera de Andalucía (verde, blanca y verde) y después Robit propone un reto: escribir las ocho provincias andaluzas, con o sin tilde.',
   PC,
   [('0-10', '¿Qué sabemos de Andalucía? Colores de la bandera, provincias, capital.'),
@@ -159,7 +205,7 @@ T(5, 'efemeride-andalucia', 'Día de Andalucía · Bandera y provincias', '28 de
    'ESO: añadir capitales o comarcas, o preguntar datos (el 28 de febrero se celebra el referéndum de autonomía de 1980).'])
 
 # =========================================================== Día del Libro
-T(6, 'efemeride-libro', 'Día del Libro · Elige tu propia aventura', '23 de abril · desde 8 años',
+T(7, 'efemeride-libro', 'Día del Libro · Elige tu propia aventura', '23 de abril · desde 8 años',
   'Robit encuentra un libro mágico que le lleva a otro mundo. Quien juega decide el camino escribiendo sus respuestas, y cada decisión cambia el escenario y el final.',
   PC,
   [('0-10', 'Lectura de un fragmento de un libro de aventuras y presentación del reto.'),
@@ -197,7 +243,7 @@ def residuo(nombre, cos, bueno, x, y):
         ifelse(touching(bueno), [chv('reciclados', 1), play('ding'), hide(), stop('this script')],
                [if_(or_(touching(otros[0]), touching(otros[1])), play('error'), say('¡Ese no es su contenedor!', 1)), glide(0.3, x, y)]))]],
         x=x, y=y, size=150, sounds=['ding', 'error'])
-T(7, 'efemeride-medio-ambiente', 'Día del Medio Ambiente · Recicla con Robit', '5 de junio · desde 6 años',
+T(8, 'efemeride-medio-ambiente', 'Día del Medio Ambiente · Recicla con Robit', '5 de junio · desde 6 años',
   'Hay que arrastrar cada residuo a su contenedor: amarillo para envases de plástico, latas y briks; azul para papel y cartón; verde para vidrio. Si te equivocas, el residuo vuelve a su sitio.',
   PC,
   [('0-10', '¿Qué va en cada contenedor? Repaso con objetos reales o fotos.'),
@@ -225,7 +271,7 @@ T(7, 'efemeride-medio-ambiente', 'Día del Medio Ambiente · Recicla con Robit',
    'ESO: residuos que aparecen al azar desde una lista, cronómetro y récord.'])
 
 # =========================================================== Verano
-T(8, 'efemeride-verano', 'Fin de curso · Surf de verano', 'Junio · desde 8 años',
+T(9, 'efemeride-verano', 'Fin de curso · Surf de verano', 'Junio · desde 8 años',
   'Robit hace surf: sube y baja con las flechas para recoger conchas y esquivar medusas durante 40 segundos. ¡Feliz verano!',
   PC,
   [('0-10', 'Demostración y repaso de clones (lo vimos en otros retos).'),
